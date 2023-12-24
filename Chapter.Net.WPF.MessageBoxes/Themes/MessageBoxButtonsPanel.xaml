@@ -1,0 +1,205 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:messageBoxes="clr-namespace:Chapter.Net.WPF.MessageBoxes">
+
+    <Style TargetType="{x:Type messageBoxes:MessageBoxButtonsPanel}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Height" Value="49" />
+        <Setter Property="Background" Value="#FFF0F0F0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type messageBoxes:MessageBoxButtonsPanel}">
+                    <DockPanel Background="{TemplateBinding Background}">
+                        <UniformGrid Margin="10,0,0,0"
+                                     DockPanel.Dock="Right"
+                                     Rows="1">
+                            <messageBoxes:MessageBoxButton x:Name="PART_SingleOKButton"
+                                                           Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+
+                            <messageBoxes:MessageBoxButton x:Name="PART_OKButton"
+                                                           Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_YesButton"
+                                                           Content="{Binding Strings.Yes, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_YesToAllButton"
+                                                           Content="{Binding Strings.YesToAll, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_NoButton"
+                                                           Content="{Binding Strings.No, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_NoToAllButton"
+                                                           Content="{Binding Strings.NoToAll, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_AbortButton"
+                                                           Content="{Binding Strings.Abort, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_RetryButton"
+                                                           Content="{Binding Strings.Retry, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_CancelButton"
+                                                           Content="{Binding Strings.Cancel, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_IgnoreButton"
+                                                           Content="{Binding Strings.Ignore, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+
+                            <messageBoxes:MessageBoxButton x:Name="PART_TryAgainButton"
+                                                           Content="{Binding Strings.TryAgain, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                            <messageBoxes:MessageBoxButton x:Name="PART_ContinueButton"
+                                                           Content="{Binding Strings.Continue, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+
+                            <messageBoxes:MessageBoxButton x:Name="PART_HelpButton"
+                                                           Content="{Binding Strings.Help, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           Visibility="Collapsed" />
+                        </UniformGrid>
+
+                        <messageBoxes:MessageBoxExpander x:Name="PART_DetailsExpander"
+                                                         CollapsedHeaderText="{Binding Strings.OpenDetails, RelativeSource={RelativeSource TemplatedParent}}"
+                                                         ExpandedHeaderText="{Binding Strings.CloseDetails, RelativeSource={RelativeSource TemplatedParent}}"
+                                                         Visibility="Collapsed" />
+
+                        <messageBoxes:MessageBoxCheckBox x:Name="PART_DoNotShowAgainCheckBox"
+                                                         Content="{Binding Strings.DoNotShowAgain, RelativeSource={RelativeSource TemplatedParent}}"
+                                                         IsChecked="{Binding IsDoNotShowAgainChecked, RelativeSource={RelativeSource TemplatedParent}}"
+                                                         Visibility="Collapsed" />
+
+                        <Grid />
+                    </DockPanel>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Buttons" Value="OK">
+                            <Setter TargetName="PART_SingleOKButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_SingleOKButton" Property="AutomationProperties.AutomationId" Value="2" />
+                        </Trigger>
+
+                        <Trigger Property="Buttons" Value="OKCancel">
+                            <Setter TargetName="PART_OKButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_CancelButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_OKButton" Property="AutomationProperties.AutomationId" Value="1" />
+                            <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
+                        </Trigger>
+
+                        <Trigger Property="Buttons" Value="AbortRetryIgnore">
+                            <Setter TargetName="PART_AbortButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_RetryButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_IgnoreButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_AbortButton" Property="AutomationProperties.AutomationId" Value="3" />
+                            <Setter TargetName="PART_RetryButton" Property="AutomationProperties.AutomationId" Value="4" />
+                            <Setter TargetName="PART_IgnoreButton" Property="AutomationProperties.AutomationId" Value="5" />
+                        </Trigger>
+
+                        <Trigger Property="Buttons" Value="YesNoCancel">
+                            <Setter TargetName="PART_YesButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_NoButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_CancelButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_YesButton" Property="AutomationProperties.AutomationId" Value="6" />
+                            <Setter TargetName="PART_NoButton" Property="AutomationProperties.AutomationId" Value="7" />
+                            <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
+                        </Trigger>
+
+                        <Trigger Property="Buttons" Value="YesNo">
+                            <Setter TargetName="PART_YesButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_NoButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_YesButton" Property="AutomationProperties.AutomationId" Value="6" />
+                            <Setter TargetName="PART_NoButton" Property="AutomationProperties.AutomationId" Value="7" />
+                        </Trigger>
+
+                        <Trigger Property="Buttons" Value="RetryCancel">
+                            <Setter TargetName="PART_RetryButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_CancelButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_RetryButton" Property="AutomationProperties.AutomationId" Value="4" />
+                            <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
+                        </Trigger>
+
+                        <Trigger Property="Buttons" Value="CancelTryAgainContinue">
+                            <Setter TargetName="PART_CancelButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_TryAgainButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_ContinueButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
+                            <Setter TargetName="PART_TryAgainButton" Property="AutomationProperties.AutomationId" Value="4" />
+                            <Setter TargetName="PART_ContinueButton" Property="AutomationProperties.AutomationId" Value="8" />
+                        </Trigger>
+
+                        <Trigger Property="ShowHelpButton" Value="True">
+                            <Setter TargetName="PART_HelpButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_HelpButton" Property="AutomationProperties.AutomationId" Value="9" />
+                        </Trigger>
+
+                        <Trigger Property="ShowDoNotShowAgainCheckBox" Value="True">
+                            <Setter TargetName="PART_DoNotShowAgainCheckBox" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_DoNotShowAgainCheckBox" Property="AutomationProperties.AutomationId" Value="12" />
+                        </Trigger>
+
+                        <Trigger Property="ShowDetails" Value="True">
+                            <Setter TargetName="PART_DetailsExpander" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_DetailsExpander" Property="AutomationProperties.AutomationId" Value="13" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNoCancel" />
+                                <Condition Property="ShowYesToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_YesToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_YesToAllButton" Property="AutomationProperties.AutomationId" Value="10" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNo" />
+                                <Condition Property="ShowYesToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_YesToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_YesToAllButton" Property="AutomationProperties.AutomationId" Value="10" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNoCancel" />
+                                <Condition Property="ShowNoToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_NoToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_NoToAllButton" Property="AutomationProperties.AutomationId" Value="11" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNo" />
+                                <Condition Property="ShowNoToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_NoToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_NoToAllButton" Property="AutomationProperties.AutomationId" Value="11" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ControlTheme, RelativeSource={RelativeSource AncestorType={x:Type messageBoxes:MessageBoxWindow}}}" Value="Dark">
+                <Setter Property="Background" Value="#2D2D2D" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ControlTheme, RelativeSource={RelativeSource AncestorType={x:Type messageBoxes:MessageBoxWindow}}}" Value="Light">
+                <Setter Property="Background" Value="#FBFBFB" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

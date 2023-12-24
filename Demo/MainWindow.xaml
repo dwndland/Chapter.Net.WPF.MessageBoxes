@@ -1,0 +1,223 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chapter="clr-namespace:Chapter.Net.WPF;assembly=Chapter.Net.WPF"
+        xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:messageBoxes="clr-namespace:Chapter.Net.WPF.MessageBoxes;assembly=Chapter.Net.WPF.MessageBoxes"
+        Title="Chapter Demo"
+        Width="1000"
+        Height="700"
+        MinWidth="800"
+        MinHeight="500"
+        mc:Ignorable="d">
+
+    <DockPanel>
+        <Button Margin="10"
+                Padding="30,8"
+                HorizontalAlignment="Right"
+                Click="OnShowClick"
+                Content="Show"
+                DockPanel.Dock="Bottom" />
+
+        <Grid Margin="10,10,10,0" DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top" Text="Caption" />
+                <TextBox Height="22"
+                         Margin="0,0,0,10"
+                         DockPanel.Dock="Top"
+                         Text="{Binding Caption}" />
+                <TextBlock DockPanel.Dock="Top" Text="Message" />
+                <TextBox AcceptsReturn="True"
+                         AcceptsTab="True"
+                         HorizontalScrollBarVisibility="Auto"
+                         Text="{Binding Message}"
+                         VerticalScrollBarVisibility="Auto" />
+            </DockPanel>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Buttons" />
+                <controls:EnumerationComboBox Margin="0,0,0,10"
+                                              EnumType="{x:Type messageBoxes:MessageBoxButtons}"
+                                              SelectedItem="{Binding Buttons}" />
+                <TextBlock Text="Icon" />
+                <controls:EnumerationComboBox Margin="0,0,0,10"
+                                              EnumType="{x:Type messageBoxes:MessageBoxImages}"
+                                              SelectedItem="{Binding WindowIcon}" />
+                <TextBlock Text="DefaultButton" />
+                <controls:EnumerationComboBox EnumType="{x:Type messageBoxes:MessageBoxResult}" SelectedItem="{Binding DefaultButton}" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="10,10,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".6*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width=".4*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="192" />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Options">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10">
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowYesToAllButton"
+                                  IsChecked="{Binding ShowYesToAllButton}" />
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowNoToAllButton"
+                                  IsChecked="{Binding ShowNoToAllButton}" />
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowHelpButton"
+                                  IsChecked="{Binding ShowHelpButton}" />
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowDoNotShowAgainCheckBox"
+                                  IsChecked="{Binding ShowDoNotShowAgainCheckBox}" />
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowDetails"
+                                  IsChecked="{Binding ShowDetails}" />
+                        <TextBlock Text="DetailsContent" />
+                        <TextBox Height="60"
+                                 Margin="0,0,0,10"
+                                 AcceptsReturn="True"
+                                 AcceptsTab="True"
+                                 HorizontalScrollBarVisibility="Auto"
+                                 Text="{Binding DetailsText}"
+                                 VerticalScrollBarVisibility="Auto" />
+                        <TextBlock Margin="0,0,0,10"
+                                   Text="MessageCopyFormatter = DefaultMessageCopyFormatter"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Margin="0,0,0,10" Text="WindowOptions -&gt;" />
+                        <TextBlock Margin="0,0,0,10" Text="Strings -&gt;" />
+                        <TextBlock Text="Styles -&gt;" />
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox Grid.Column="2" Header="WindowOptions">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Theme" />
+                        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                                      EnumType="{x:Type chapter:WindowTheme}"
+                                                      SelectedItem="{Binding WindowTheme}" />
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowSystemMenu"
+                                  IsChecked="{Binding ShowSystemMenu}" />
+                        <TextBlock Margin="0,0,0,10" Text="Icon = null" />
+                        <TextBlock Text="StartupLocation" />
+                        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                                      EnumType="{x:Type WindowStartupLocation}"
+                                                      SelectedItem="{Binding StartupLocation}" />
+                        <CheckBox Margin="0,0,0,10"
+                                  Content="ShowInTaskbar"
+                                  IsChecked="{Binding WindowShowInTaskbar}" />
+                        <TextBlock Margin="0,0,0,10" Text="Position if Manual" />
+                        <TextBlock Text="ResizeMode" />
+                        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                                      EnumType="{x:Type ResizeMode}"
+                                                      SelectedItem="{Binding WindowResizeMode}" />
+                        <TextBlock Text="MinWidth" />
+                        <TextBox Text="{Binding WindowMinWidth}" />
+                        <TextBlock Text="MaxWidth" />
+                        <TextBox Text="{Binding WindowMaxWidth}" />
+                        <TextBlock Text="MinHeight" />
+                        <TextBox Text="{Binding WindowMinHeight}" />
+                        <TextBlock Text="MaxHeight" />
+                        <TextBox Text="{Binding WindowMaxHeight}" />
+                        <TextBlock Text="DetailedMinWidth" />
+                        <TextBox Text="{Binding DetailedMinWidth}" />
+                        <TextBlock Text="DetailedMaxWidth" />
+                        <TextBox Text="{Binding DetailedMaxWidth}" />
+                        <TextBlock Text="DetailedMinHeight" />
+                        <TextBox Text="{Binding DetailedMinHeight}" />
+                        <TextBlock Text="DetailedMaxHeight" />
+                        <TextBox Text="{Binding DetailedMaxHeight}" />
+                        <TextBlock Text="DetailedResizeMode" />
+                        <controls:EnumerationComboBox EnumType="{x:Type ResizeMode}" SelectedItem="{Binding DetailedResizeMode}" />
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox Grid.Column="4" Header="Strings">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="OK" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding OK}" />
+
+                        <TextBlock Text="Cancel" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Cancel}" />
+
+                        <TextBlock Text="Abort" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Abort}" />
+
+                        <TextBlock Text="Retry" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Retry}" />
+
+                        <TextBlock Text="Ignore" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Ignore}" />
+
+                        <TextBlock Text="Yes" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Yes}" />
+
+                        <TextBlock Text="No" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding No}" />
+
+                        <TextBlock Text="Help" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Help}" />
+
+                        <TextBlock Text="TryAgain" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding TryAgain}" />
+
+                        <TextBlock Text="Continue" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding Continue}" />
+
+                        <TextBlock Text="YesToAll" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding YesToAll}" />
+
+                        <TextBlock Text="NoToAll" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding NoToAll}" />
+
+                        <TextBlock Text="DoNotShowAgain" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding DoNotShowAgain}" />
+
+                        <TextBlock Text="OpenDetails" />
+                        <TextBox Margin="0,0,0,10" Text="{Binding OpenDetails}" />
+
+                        <TextBlock Text="CloseDetails" />
+                        <TextBox Text="{Binding CloseDetails}" />
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox Grid.Column="6" Header="Styles">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Theme" />
+                        <controls:EnumerationComboBox Margin="0,0,0,10"
+                                                      EnumType="{x:Type chapter:WindowTheme}"
+                                                      SelectedItem="{Binding ControlTheme}" />
+                        <TextBlock Margin="0,0,0,10" Text="ImageStyle: null" />
+                        <TextBlock Margin="0,0,0,10" Text="ScrollViewerStyle: null" />
+                        <TextBlock Margin="0,0,0,10" Text="TextStyle: null" />
+                        <TextBlock Margin="0,0,0,10" Text="ButtonsPanelStyle: null" />
+                        <TextBlock Margin="0,0,0,10" Text="ButtonStyle: null" />
+                        <TextBlock Margin="0,0,0,10" Text="CheckBoxStyle: null" />
+                        <TextBlock Margin="0,0,0,10" Text="ExpanderStyle: null" />
+                        <TextBlock Text="DetailsPresenterStyle: null" />
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+
+</Window>

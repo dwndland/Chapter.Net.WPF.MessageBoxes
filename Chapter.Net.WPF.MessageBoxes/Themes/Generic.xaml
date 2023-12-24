@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxButton.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxButtonsPanel.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxCheckBox.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxDetailsPresenter.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxExpander.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxImage.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxScrollViewer.xaml" />
+        <ResourceDictionary Source="/Chapter.Net.WPF.MessageBoxes;component/Themes/MessageBoxText.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
