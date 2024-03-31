@@ -3,11 +3,13 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // 
 
+using Chapter.Net.WinAPI.Data;
+using Chapter.Net.WinAPI;
 using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using Chapter.Net.WPF.Behaviors;
+using System.Windows.Interop;
 
 // ReSharper disable once CheckNamespace
 
@@ -153,14 +155,13 @@ public partial class MessageBoxWindow : INotifyPropertyChanged
     /// <summary>
     ///     Raises the System.Windows.Window.SourceInitialized event.
     /// </summary>
-    /// <param name="e">An System.EventArgs that contains the event data.</param>
+    /// <param name="e">A System.EventArgs that contains the event data.</param>
     protected override void OnSourceInitialized(EventArgs e)
     {
         base.OnSourceInitialized(e);
 
-        WindowBehavior.SetTheme(this, Options.WindowOptions.Theme);
-        ControlTheme = Options.Styles.Theme == WindowTheme.System ? ThemeManager.GetSystemTheme() : Options.Styles.Theme;
-        OnPropertyChanged(nameof(ControlTheme));
+        SetTheme();
+        SetTitleBarItems();
     }
 
     /// <summary>
@@ -222,6 +223,30 @@ public partial class MessageBoxWindow : INotifyPropertyChanged
         Close();
     }
 
+    private void SetTheme()
+    {
+        ThemeManager.SetWindowTheme(this, Options.WindowOptions.Theme);
+        ControlTheme = Options.Styles.Theme == WindowTheme.System ? ThemeManager.GetSystemTheme() : Options.Styles.Theme;
+        OnPropertyChanged(nameof(ControlTheme));
+    }
+
+    private void SetTitleBarItems()
+    {
+        if (!Options.WindowOptions.ShowSystemMenu)
+            DisableSystemMenu(this);
+        else if (Options.WindowOptions.Icon != null)
+            Icon = Options.WindowOptions.Icon;
+
+        if (Options.WindowOptions.ResizeMode == ResizeMode.NoResize)
+        {
+            DisableMinimizeButton(this);
+            DisableMaximizeButton(this);
+        }
+
+        if (Buttons == MessageBoxButtons.YesNo || Buttons == MessageBoxButtons.AbortRetryIgnore)
+            DisableCloseButton(this);
+    }
+
     internal void SetWindowOptions(Window window, MessageBoxOptions.WindowOptionsContainer options)
     {
         window.WindowStartupLocation = options.StartupLocation;
@@ -232,20 +257,6 @@ public partial class MessageBoxWindow : INotifyPropertyChanged
             window.Left = options.Position.X;
             window.Top = options.Position.Y;
         }
-
-        if (!Options.WindowOptions.ShowSystemMenu)
-            WindowTitleBarBehavior.SetDisableSystemMenu(this, true);
-        else if (Options.WindowOptions.Icon != null)
-            Icon = Options.WindowOptions.Icon;
-
-        if (Options.WindowOptions.ResizeMode == ResizeMode.NoResize)
-        {
-            WindowTitleBarBehavior.SetDisableMinimizeButton(this, true);
-            WindowTitleBarBehavior.SetDisableMaximizeButton(this, true);
-        }
-
-        if (Buttons == MessageBoxButtons.YesNo || Buttons == MessageBoxButtons.AbortRetryIgnore)
-            WindowTitleBarBehavior.SetDisableCloseButton(this, true);
 
         window.ResizeMode = options.ResizeMode;
         window.ShowInTaskbar = options.ShowInTaskbar;
@@ -262,5 +273,49 @@ public partial class MessageBoxWindow : INotifyPropertyChanged
     private void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    private static void DisableSystemMenu(Window window)
+    {
+        var hwnd = new WindowInteropHelper(window).Handle;
+        var windowLong = User32.GetWindowLong(hwnd, GWL.EXSTYLE);
+        windowLong |= WS.EX_DLGMODALFRAME;
+        uint windowFlags = SWP.NOMOVE | SWP.NOSIZE | SWP.NOZORDER | SWP.FRAMECHANGED;
+        User32.SetWindowLong(hwnd, GWL.EXSTYLE, windowLong);
+        User32.SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, windowFlags);
+    }
+
+    private static void DisableMinimizeButton(Window window)
+    {
+        var hwnd = new WindowInteropHelper(window).Handle;
+        var windowLong = User32.GetWindowLong(hwnd, GWL.STYLE);
+        windowLong &= ~WS.MINIMIZEBOX;
+        User32.SetWindowLong(hwnd, GWL.STYLE, windowLong);
+    }
+
+    private static void DisableMaximizeButton(Window window)
+    {
+        var hwnd = new WindowInteropHelper(window).Handle;
+        var windowLong = User32.GetWindowLong(hwnd, GWL.STYLE);
+        windowLong &= ~WS.MAXIMIZEBOX;
+        User32.SetWindowLong(hwnd, GWL.STYLE, windowLong);
+    }
+
+    private static void DisableCloseButton(Window window)
+    {
+        if (PresentationSource.FromVisual(window) is HwndSource hwndSource)
+            hwndSource.AddHook(DisableCloseButtonHook);
+    }
+
+    private static IntPtr DisableCloseButtonHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+    {
+        if (msg == WM.SHOWWINDOW)
+        {
+            var hMenu = User32.GetSystemMenu(hwnd, false);
+            if (hMenu != IntPtr.Zero)
+                User32.EnableMenuItem(hMenu, SC.CLOSE, MF.BYCOMMAND | MF.GRAYED);
+        }
+
+        return IntPtr.Zero;
     }
 }
