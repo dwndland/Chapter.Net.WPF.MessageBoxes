@@ -9,15 +9,16 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.MessageBoxes;
-
-/// <summary>
-///     Represents the ScrollViewer used in the MessageBox.
-/// </summary>
-public class MessageBoxScrollViewer : ScrollViewer
+namespace Chapter.Net.WPF.MessageBoxes
 {
-    static MessageBoxScrollViewer()
+    /// <summary>
+    ///     Represents the ScrollViewer used in the MessageBox.
+    /// </summary>
+    public class MessageBoxScrollViewer : ScrollViewer
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(MessageBoxScrollViewer), new FrameworkPropertyMetadata(typeof(MessageBoxScrollViewer)));
+        static MessageBoxScrollViewer()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MessageBoxScrollViewer), new FrameworkPropertyMetadata(typeof(MessageBoxScrollViewer)));
+        }
     }
 }

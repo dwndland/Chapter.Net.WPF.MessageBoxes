@@ -9,15 +9,16 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.MessageBoxes;
-
-/// <summary>
-///     Represents the text block used in the MessageBox.
-/// </summary>
-public class MessageBoxText : ContentControl
+namespace Chapter.Net.WPF.MessageBoxes
 {
-    static MessageBoxText()
+    /// <summary>
+    ///     Represents the text block used in the MessageBox.
+    /// </summary>
+    public class MessageBoxText : ContentControl
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(MessageBoxText), new FrameworkPropertyMetadata(typeof(MessageBoxText)));
+        static MessageBoxText()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MessageBoxText), new FrameworkPropertyMetadata(typeof(MessageBoxText)));
+        }
     }
 }

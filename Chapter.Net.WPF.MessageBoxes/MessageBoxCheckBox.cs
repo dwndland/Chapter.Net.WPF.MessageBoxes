@@ -9,15 +9,16 @@ using System.Windows.Controls;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.WPF.MessageBoxes;
-
-/// <summary>
-///     Represents the CheckBox used in the MessageBox.
-/// </summary>
-public class MessageBoxCheckBox : CheckBox
+namespace Chapter.Net.WPF.MessageBoxes
 {
-    static MessageBoxCheckBox()
+    /// <summary>
+    ///     Represents the CheckBox used in the MessageBox.
+    /// </summary>
+    public class MessageBoxCheckBox : CheckBox
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(MessageBoxCheckBox), new FrameworkPropertyMetadata(typeof(MessageBoxCheckBox)));
+        static MessageBoxCheckBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MessageBoxCheckBox), new FrameworkPropertyMetadata(typeof(MessageBoxCheckBox)));
+        }
     }
 }
