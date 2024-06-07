@@ -5,8 +5,8 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 using System.Windows;
-using Chapter.Net.WPF;
 using Chapter.Net.WPF.MessageBoxes;
+using Chapter.Net.WPF.Theming;
 using MessageBox = System.Windows.MessageBox;
 using MessageBoxOptions = Chapter.Net.WPF.MessageBoxes.MessageBoxOptions;
 using MessageBoxResult = Chapter.Net.WPF.MessageBoxes.MessageBoxResult;

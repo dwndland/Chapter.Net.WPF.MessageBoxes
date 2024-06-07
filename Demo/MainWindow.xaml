@@ -1,11 +1,11 @@
 ﻿<Window x:Class="Demo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:chapter="clr-namespace:Chapter.Net.WPF;assembly=Chapter.Net.WPF"
         xmlns:controls="clr-namespace:Chapter.Net.WPF.Controls;assembly=Chapter.Net.WPF.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:messageBoxes="clr-namespace:Chapter.Net.WPF.MessageBoxes;assembly=Chapter.Net.WPF.MessageBoxes"
+        xmlns:theming="clr-namespace:Chapter.Net.WPF.Theming;assembly=Chapter.Net.WPF.Theming"
         Title="Chapter Demo"
         Width="1000"
         Height="700"
@@ -44,15 +44,15 @@
 
             <StackPanel Grid.Column="2">
                 <TextBlock Text="Buttons" />
-                <controls:EnumerationComboBox Margin="0,0,0,10"
-                                              EnumType="{x:Type messageBoxes:MessageBoxButtons}"
-                                              SelectedItem="{Binding Buttons}" />
+                <controls:ChapterComboBox Margin="0,0,0,10"
+                                          EnumType="{x:Type messageBoxes:MessageBoxButtons}"
+                                          SelectedItem="{Binding Buttons}" />
                 <TextBlock Text="Icon" />
-                <controls:EnumerationComboBox Margin="0,0,0,10"
-                                              EnumType="{x:Type messageBoxes:MessageBoxImages}"
-                                              SelectedItem="{Binding WindowIcon}" />
+                <controls:ChapterComboBox Margin="0,0,0,10"
+                                          EnumType="{x:Type messageBoxes:MessageBoxImages}"
+                                          SelectedItem="{Binding WindowIcon}" />
                 <TextBlock Text="DefaultButton" />
-                <controls:EnumerationComboBox EnumType="{x:Type messageBoxes:MessageBoxResult}" SelectedItem="{Binding DefaultButton}" />
+                <controls:ChapterComboBox EnumType="{x:Type messageBoxes:MessageBoxResult}" SelectedItem="{Binding DefaultButton}" />
             </StackPanel>
         </Grid>
 
@@ -107,25 +107,25 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel Margin="10">
                         <TextBlock Text="Theme" />
-                        <controls:EnumerationComboBox Margin="0,0,0,10"
-                                                      EnumType="{x:Type chapter:WindowTheme}"
-                                                      SelectedItem="{Binding WindowTheme}" />
+                        <controls:ChapterComboBox Margin="0,0,0,10"
+                                                  EnumType="{x:Type theming:WindowTheme}"
+                                                  SelectedItem="{Binding WindowTheme}" />
                         <CheckBox Margin="0,0,0,10"
                                   Content="ShowSystemMenu"
                                   IsChecked="{Binding ShowSystemMenu}" />
                         <TextBlock Margin="0,0,0,10" Text="Icon = null" />
                         <TextBlock Text="StartupLocation" />
-                        <controls:EnumerationComboBox Margin="0,0,0,10"
-                                                      EnumType="{x:Type WindowStartupLocation}"
-                                                      SelectedItem="{Binding StartupLocation}" />
+                        <controls:ChapterComboBox Margin="0,0,0,10"
+                                                  EnumType="{x:Type WindowStartupLocation}"
+                                                  SelectedItem="{Binding StartupLocation}" />
                         <CheckBox Margin="0,0,0,10"
                                   Content="ShowInTaskbar"
                                   IsChecked="{Binding WindowShowInTaskbar}" />
                         <TextBlock Margin="0,0,0,10" Text="Position if Manual" />
                         <TextBlock Text="ResizeMode" />
-                        <controls:EnumerationComboBox Margin="0,0,0,10"
-                                                      EnumType="{x:Type ResizeMode}"
-                                                      SelectedItem="{Binding WindowResizeMode}" />
+                        <controls:ChapterComboBox Margin="0,0,0,10"
+                                                  EnumType="{x:Type ResizeMode}"
+                                                  SelectedItem="{Binding WindowResizeMode}" />
                         <TextBlock Text="MinWidth" />
                         <TextBox Text="{Binding WindowMinWidth}" />
                         <TextBlock Text="MaxWidth" />
@@ -143,7 +143,7 @@
                         <TextBlock Text="DetailedMaxHeight" />
                         <TextBox Text="{Binding DetailedMaxHeight}" />
                         <TextBlock Text="DetailedResizeMode" />
-                        <controls:EnumerationComboBox EnumType="{x:Type ResizeMode}" SelectedItem="{Binding DetailedResizeMode}" />
+                        <controls:ChapterComboBox EnumType="{x:Type ResizeMode}" SelectedItem="{Binding DetailedResizeMode}" />
                     </StackPanel>
                 </ScrollViewer>
             </GroupBox>
@@ -203,9 +203,9 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel Margin="10">
                         <TextBlock Text="Theme" />
-                        <controls:EnumerationComboBox Margin="0,0,0,10"
-                                                      EnumType="{x:Type chapter:WindowTheme}"
-                                                      SelectedItem="{Binding ControlTheme}" />
+                        <controls:ChapterComboBox Margin="0,0,0,10"
+                                                  EnumType="{x:Type theming:WindowTheme}"
+                                                  SelectedItem="{Binding ControlTheme}" />
                         <TextBlock Margin="0,0,0,10" Text="ImageStyle: null" />
                         <TextBlock Margin="0,0,0,10" Text="ScrollViewerStyle: null" />
                         <TextBlock Margin="0,0,0,10" Text="TextStyle: null" />
