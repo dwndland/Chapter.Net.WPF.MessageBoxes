@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Icon.png" alt="logo" width="64"/>
+<img src="https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Icon.png" alt="logo" width="64"/>
 
 # Chapter.Net.WPF.MessageBoxes Library
 
@@ -9,17 +9,17 @@ Here the Chapter.Net.WPF.MessageBoxes library steps in. Thats a custom message b
 ## Preview
 (Some button labels are n German because the screenshots are made on a German windows)
 * Example 1  
-![Light](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/1_Light.png) ![Dark](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/1_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/1_Native.png)
+![Light](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/1_Light.png) ![Dark](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/1_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/1_Native.png)
 * Example 2  
-![Light](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/2_Light.png) ![Dark](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/2_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/2_Native.png)
+![Light](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/2_Light.png) ![Dark](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/2_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/2_Native.png)
 * Example 3  
-![Light](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/3_Light.png) ![Dark](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/3_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/3_Native.png)
+![Light](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/3_Light.png) ![Dark](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/3_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/3_Native.png)
 * Example 4  
-![Light](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/4_Light.png) ![Dark](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/4_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/4_Native.png)
+![Light](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/4_Light.png) ![Dark](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/4_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/4_Native.png)
 * Example 5  
-![Light](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/5_Light.png) ![Dark](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/5_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/5_Native.png)
+![Light](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/5_Light.png) ![Dark](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/5_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/5_Native.png)
 * Example 6  
-![Light](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/6_Light.png) ![Dark](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/6_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndland/Chapter.Net.WPF.MessageBoxes/master/Images/6_Native.png)
+![Light](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/6_Light.png) ![Dark](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/6_Dark.png) ![Unstyled](https://raw.githubusercontent.com/dwndlnd/Chapter.Net.WPF.MessageBoxes/master/Images/6_Native.png)
 
 ## Features
 - **Styling:** Build in Light and Dark style and allow passing custom styles.
@@ -144,7 +144,7 @@ Here the Chapter.Net.WPF.MessageBoxes library steps in. Thats a custom message b
 
 ## Links
 * [NuGet](https://www.nuget.org/packages/Chapter.Net.WPF.MessageBoxes)
-* [GitHub](https://github.com/my-libraries/Chapter.Net.WPF.MessageBoxes)
+* [GitHub](https://github.com/dwndlnd/Chapter.Net.WPF.MessageBoxes)
 
 ## License
 Copyright (c) David Wendland. All rights reserved.
