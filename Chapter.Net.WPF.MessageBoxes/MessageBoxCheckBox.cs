@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="MessageBoxCheckBox.cs" company="my-libraries">
+// <copyright file="MessageBoxCheckBox.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------

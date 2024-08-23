@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="MessageBoxButton.cs" company="my-libraries">
+// <copyright file="MessageBoxButton.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------

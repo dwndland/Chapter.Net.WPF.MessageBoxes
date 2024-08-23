@@ -7,7 +7,7 @@
     <Authors>David Wendland</Authors>
     <Description>An message box made in WPF with more features and possibility to style.</Description>
     <Copyright>Copyright (c) 2024 David Wendland</Copyright>
-    <PackageProjectUrl>https://github.com/dwndlnd/Chapter.Net.WPF.MessageBoxes</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.WPF.MessageBoxes</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

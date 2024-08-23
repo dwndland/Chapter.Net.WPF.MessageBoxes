@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="MessageBoxStrings.cs" company="my-libraries">
+// <copyright file="MessageBoxStrings.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------

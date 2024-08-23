@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------------------------------------------
-// <copyright file="DefaultMessageCopyFormatter.cs" company="my-libraries">
+// <copyright file="DefaultMessageCopyFormatter.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
