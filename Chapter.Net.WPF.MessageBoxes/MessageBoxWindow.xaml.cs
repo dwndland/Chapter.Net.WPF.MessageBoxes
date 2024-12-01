@@ -10,7 +10,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using Chapter.Net.WinAPI;
-using Chapter.Net.WinAPI.Data;
 using Chapter.Net.WPF.Theming;
 
 // ReSharper disable once CheckNamespace
