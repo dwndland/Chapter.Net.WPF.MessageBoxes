@@ -5,8 +5,8 @@
     <UseWPF>true</UseWPF>
     <Version>2.1.0</Version>
     <Authors>David Wendland</Authors>
-    <Description>An message box made in WPF with more features and possibility to style.</Description>
-    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
+    <Description>Chapter.Net.WPF.MessageBoxes is a library that offers an extended, highly customizable message box with a styled WPF window for enhanced user interaction.</Description>
+    <Copyright>Copyright (c) 2025 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.WPF.MessageBoxes</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

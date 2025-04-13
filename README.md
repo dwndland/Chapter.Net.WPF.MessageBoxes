@@ -3,8 +3,7 @@
 # Chapter.Net.WPF.MessageBoxes Library
 
 ## Overview
-The System.Windows.MessageBox to use within WPF has two big problems. First is that it looks like windows Classic and it lacks a lot of features.
-Here the Chapter.Net.WPF.MessageBoxes library steps in. Thats a custom message box made out of a WPF window. It has a lot of additonal features, see below, and it brings build in styles and allows custom styling.
+Chapter.Net.WPF.MessageBoxes is a library that offers an extended, highly customizable message box with a styled WPF window for enhanced user interaction.
 
 ## Preview
 (Some button labels are n German because the screenshots are made on a German windows)
